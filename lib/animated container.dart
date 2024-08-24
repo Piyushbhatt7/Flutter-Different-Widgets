@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -37,16 +36,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   // var ftController = TextEditingController();
   // RangeValues values = RangeValues(0, 1);
 
-  // var _width = 200.0;
-  // var _height = 100.0;
+  var _width = 200.0;
+  var _height = 100.0;
 
-  // Color bgColor = Colors.blueGrey;
+  Color bgColor = Colors.blueGrey;
 
-  // bool flag = true;
-
-  final List<String> arrIndex = [
-    'Piyush', 'Ankush', 'SheetRaj', 'Hemadri', 'Sriyansh', 'Amlendu', 'Souvik', 'Ronaldo', 'Messi', 'Ziadne', 'Neymar'
-  ];
+  bool flag = true;
 
   @override
   Widget build(BuildContext context) {
@@ -54,35 +49,62 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     //RangeLabels labels = RangeLabels(values.start.toString(), values.end.toString());
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hero Animation "),
+        title: Text("Foo Animation "),
         backgroundColor: Color.fromARGB(255, 136, 31, 136),
       ),
       
        body: Center(
-         child: ListWheelScrollView(
-          children: arrIndex.map((name) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              child: Center(child: Text('$name',style: TextStyle(fontSize: 21, color: Colors.white),)),
-            
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(21), 
-              ),
-              
-              
-              width: double.infinity,
-             
-            ),
-          )).toList(),
-          
-           
+         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
          
-          
-          itemExtent: 200,
-          
-          
-          ),
+          children: [
+         
+            AnimatedContainer(
+         
+              width: _width,
+              height: _height,
+              curve: Curves.bounceInOut,
+              color: bgColor,
+              duration: Duration(
+                seconds: 2
+              ),
+         
+            ),
+         
+             ElevatedButton(onPressed: (){
+
+             
+
+             setState(() {
+
+              if(flag)
+              {
+                _width = 100.0;
+                _height = 200.0;
+                bgColor = Colors.orange;
+
+                flag = false;
+              }
+
+              else
+              // ignore: dead_code
+              {
+
+                _width = 200.0;
+                 _height = 100.0;
+                 bgColor = Colors.blueGrey;
+                  
+
+                 flag = true;
+              }
+               
+             });
+
+
+             }, child: Text('Animated'))          
+          ],
+         
+         ),
        ),
     
     );

@@ -1,246 +1,246 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+// import 'package:flutter/widgets.dart';
 
 
 
-void main() {
-  runApp(FlutterApp());
+// void main() {
+//   runApp(FlutterApp());
 
   
   
-}
+// }
 
-class FlutterApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "FlutterApp",
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: const DashBoardScreen(),
-    );
-  }
-}
+// class FlutterApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "FlutterApp",
+//       theme: ThemeData(
+//         primarySwatch: Colors.pink,
+//       ),
+//       home: const DashBoardScreen(),
+//     );
+//   }
+// }
 
-class DashBoardScreen extends StatefulWidget {
-  const DashBoardScreen({Key? key}) : super(key: key);
+// class DashBoardScreen extends StatefulWidget {
+//   const DashBoardScreen({Key? key}) : super(key: key);
 
-  @override
-  State<DashBoardScreen> createState() => _DashBoardScreenState();
+//   @override
+//   State<DashBoardScreen> createState() => _DashBoardScreenState();
   
-}
+// }
 
-class _DashBoardScreenState extends State<DashBoardScreen>{
+// class _DashBoardScreenState extends State<DashBoardScreen>{
 
 
-  //  var count = 0;
+//   //  var count = 0;
 
-   var wtController = TextEditingController();
-   var ftController = TextEditingController();
-   var inController = TextEditingController();
+//    var wtController = TextEditingController();
+//    var ftController = TextEditingController();
+//    var inController = TextEditingController();
   
-   var result = '';
+//    var result = '';
    
-   var bgColor = Colors.indigo.shade200;
+//    var bgColor = Colors.indigo.shade200;
 
 
-    @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Dash Board"),
-        backgroundColor: Color.fromARGB(255, 136, 31, 136),
-      ),
-
-    
-     body: Container(
+//     @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Dash Board"),
+//         backgroundColor: Color.fromARGB(255, 136, 31, 136),
+//       ),
 
     
-     color: bgColor,
+//      body: Container(
+
+    
+//      color: bgColor,
 
 
-       child: Center(
-         child: Container(
-          width: 300,
-           child: Column(
+//        child: Center(
+//          child: Container(
+//           width: 300,
+//            child: Column(
        
-              mainAxisAlignment: MainAxisAlignment.center,
+//               mainAxisAlignment: MainAxisAlignment.center,
            
-                  children: [
+//                   children: [
            
-                      Text('BMI Calculator', style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500,
-                      ),),
-           
-           
-                        SizedBox(
-                          height: 21,
-                        ),
+//                       Text('BMI Calculator', style: TextStyle(
+//                         fontSize: 35,
+//                         fontWeight: FontWeight.w500,
+//                       ),),
            
            
-                      TextField(
+//                         SizedBox(
+//                           height: 21,
+//                         ),
            
-                        controller: wtController,
-                        decoration: InputDecoration(
-                          label: Text("Enter your Weight in kg"),
-                          prefixIcon: Icon(Icons.line_weight_rounded)
-                        ),
            
-                        keyboardType: TextInputType.numberWithOptions(),
+//                       TextField(
+           
+//                         controller: wtController,
+//                         decoration: InputDecoration(
+//                           label: Text("Enter your Weight in kg"),
+//                           prefixIcon: Icon(Icons.line_weight_rounded)
+//                         ),
+           
+//                         keyboardType: TextInputType.numberWithOptions(),
                          
-                      ),
+//                       ),
            
                   
-                   SizedBox(
-                          height: 11,
-                        ),
+//                    SizedBox(
+//                           height: 11,
+//                         ),
                        
                        
                        
-                        TextField(
+//                         TextField(
            
-                        controller: ftController,
-                        decoration: InputDecoration(
-                          label: Text("Enter your Height in (feet)"),
-                          prefixIcon: Icon(Icons.insert_chart_outlined_sharp)
-                        ),
+//                         controller: ftController,
+//                         decoration: InputDecoration(
+//                           label: Text("Enter your Height in (feet)"),
+//                           prefixIcon: Icon(Icons.insert_chart_outlined_sharp)
+//                         ),
            
-                        keyboardType: TextInputType.numberWithOptions(),
+//                         keyboardType: TextInputType.numberWithOptions(),
                          
-                      ),
+//                       ),
            
            
-                        SizedBox(
-                          height: 11,
-                        ),
+//                         SizedBox(
+//                           height: 11,
+//                         ),
                         
                         
-                        TextField(
+//                         TextField(
            
-                        controller: inController,
-                        decoration: InputDecoration(
-                          label: Text("Enter your Height in (inches)"),
-                          prefixIcon: Icon(Icons.height_outlined)
-                        ),
+//                         controller: inController,
+//                         decoration: InputDecoration(
+//                           label: Text("Enter your Height in (inches)"),
+//                           prefixIcon: Icon(Icons.height_outlined)
+//                         ),
            
-                        keyboardType: TextInputType.numberWithOptions(),
+//                         keyboardType: TextInputType.numberWithOptions(),
                          
-                      ),
+//                       ),
        
-                        SizedBox(
-                      height: 15,
-                    ),
+//                         SizedBox(
+//                       height: 15,
+//                     ),
        
-                      ElevatedButton(onPressed: (){
+//                       ElevatedButton(onPressed: (){
        
-                        var wt = wtController.text.trim();
-                        var ft = ftController.text.trim();
-                        var inches = inController.text.trim();
+//                         var wt = wtController.text.trim();
+//                         var ft = ftController.text.trim();
+//                         var inches = inController.text.trim();
        
-                        if (wt!="" && ft!="" && inches!="") {
+//                         if (wt!="" && ft!="" && inches!="") {
                            
-                        try {
+//                         try {
        
         
-                        var iWt = int.parse(wt);
-                        var iFt = int.parse(ft);
-                        var iInch = int.parse(inches);
+//                         var iWt = int.parse(wt);
+//                         var iFt = int.parse(ft);
+//                         var iInch = int.parse(inches);
        
        
-                        var tInch = (iFt * 12) + iInch;
+//                         var tInch = (iFt * 12) + iInch;
        
-                        var tCm = tInch * 2.54;
+//                         var tCm = tInch * 2.54;
        
-                        var tM = tCm / 100;
+//                         var tM = tCm / 100;
        
-                        var bmi = iWt / (tM * tM);
+//                         var bmi = iWt / (tM * tM);
        
-                        var msg = "";  
+//                         var msg = "";  
                       
-                       if(bmi>25)
-                       {
+//                        if(bmi>25)
+//                        {
 
                            
-                           msg = " You are OverWeight";
-                           bgColor = Colors.red.shade400;
-                       }
+//                            msg = " You are OverWeight";
+//                            bgColor = Colors.red.shade400;
+//                        }
 
-                       else if(bmi<18)
-                       {
-                          msg = " You are UnderWeight";
-                          bgColor = Colors.yellow.shade400;
-                       }
+//                        else if(bmi<18)
+//                        {
+//                           msg = " You are UnderWeight";
+//                           bgColor = Colors.yellow.shade400;
+//                        }
 
-                       else{
+//                        else{
 
-                        msg = " You are Healthy";
-                        bgColor = Colors.green.shade200;
+//                         msg = " You are Healthy";
+//                         bgColor = Colors.green.shade200;
 
-                       }
+//                        }
                        
                        
-                        setState(() {
+//                         setState(() {
                           
-                        result = "$msg \n Your BMI is: ${bmi.toStringAsFixed(2)}";
+//                         result = "$msg \n Your BMI is: ${bmi.toStringAsFixed(2)}";
                         
-                        });
+//                         });
        
-                        }    
+//                         }    
                        
-                               catch (e) {
-                          setState(() {
-                            result = "Please enter valid numbers";
-                          });
-                        }
+//                                catch (e) {
+//                           setState(() {
+//                             result = "Please enter valid numbers";
+//                           });
+//                         }
          
        
-                        }
+//                         }
        
-                          else{
+//                           else{
        
-                              setState(() {
+//                               setState(() {
                                 
-                                result = "Please fill all the required blank";
-                              });
-                          }
+//                                 result = "Please fill all the required blank";
+//                               });
+//                           }
        
        
-                      }, child: Text('Calculate'),
+//                       }, child: Text('Calculate'),
                       
                       
-                       style: ElevatedButton.styleFrom(
-                       foregroundColor: Color.fromARGB(255, 240, 246, 251), // Background color
-                       backgroundColor: Color.fromARGB(255, 136, 31, 136), // Text color
-                      shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0), // Rounded corners
-                        ),
-                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Button padding
-                      ),
+//                        style: ElevatedButton.styleFrom(
+//                        foregroundColor: Color.fromARGB(255, 240, 246, 251), // Background color
+//                        backgroundColor: Color.fromARGB(255, 136, 31, 136), // Text color
+//                       shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(18.0), // Rounded corners
+//                         ),
+//                       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Button padding
+//                       ),
                       
-                      ),
+//                       ),
        
-                         SizedBox(
-                      height: 17,
-                    ),
+//                          SizedBox(
+//                       height: 17,
+//                     ),
        
                       
-                      Text(result, style: TextStyle(fontSize: 20),)
-                  ],
+//                       Text(result, style: TextStyle(fontSize: 20),)
+//                   ],
                    
-           ),
-         ),
-       ),
-     ) 
+//            ),
+//          ),
+//        ),
+//      ) 
      
     
 
-    );
+//     );
     
-  }
-}
+//   }
+// }
 
